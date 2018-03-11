@@ -20,4 +20,6 @@ services:
     volumes:
       - .:/app
       - bundle_ruby25_slim:/app/.bundle:rw
+    environment:
+      DB_HOST: 'db'
     command: ["ruby", "lib/main.rb"]

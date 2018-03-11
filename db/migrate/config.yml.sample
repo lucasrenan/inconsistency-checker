@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: <%= ENV.fetch("DB_USER", "postgres") %>
+  host: <%= ENV.fetch("DB_HOST", "localhost") %>
+
+development:
+  <<: *default
+  database: inconsistency-checker_development
+
+test:
+  <<: *default
+  database: inconsistency-checker_test
+
+production:
+  <<: *default
+  database: inconsistency-checker_production
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
