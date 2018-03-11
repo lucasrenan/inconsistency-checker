@@ -1,0 +1,23 @@
+version: '3'
+
+volumes:
+  dbdata:
+    driver: local
+  bundle_ruby25_slim:
+    driver: local
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - dbdata:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - bundle_ruby25_slim:/app/.bundle:rw
+    command: ["ruby", "lib/main.rb"]
