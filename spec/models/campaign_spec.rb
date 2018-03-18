@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'app_helper'
 
-RSpec.describe Campaign do
+RSpec.describe Campaign, type: :model do
 end
