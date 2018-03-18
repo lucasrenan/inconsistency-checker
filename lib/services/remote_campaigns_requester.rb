@@ -13,7 +13,7 @@ private
   attr_reader :id
 
   def connection
-    connection = Faraday.new(url: BASE_URL) do |faraday|
+    Faraday.new(url: BASE_URL) do |faraday|
       faraday.response :json
 
       faraday.adapter Faraday.default_adapter
