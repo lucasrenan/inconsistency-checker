@@ -3,7 +3,7 @@ ENV['RAILS_ENV'] = ENV['RACK_ENV'] = 'test'
 require 'spec_helper'
 require_relative '../lib/main'
 
-require 'active_record'
+require 'webmock/rspec'
 
 Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each { |f| require f }
 

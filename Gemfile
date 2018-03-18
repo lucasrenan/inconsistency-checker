@@ -7,3 +7,4 @@ gem 'standalone_migrations', '~> 5.2.3'
 
 gem 'rspec', '~> 3.7.0'
 gem 'shoulda-matchers', '~> 3.1.2', require: false
+gem 'webmock', '~> 3.3.0'
