@@ -6,7 +6,7 @@ class RemoteCampaignsRequester
   end
 
   def call
-    connection.get(id)
+    connection.get(id).body['ads'].map{ |rc| RemoteCampaign.new(rc) }
   end
 
 private
